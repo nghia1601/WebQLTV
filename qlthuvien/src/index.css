@@ -12,10 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#card{
-  width: 18rem;
-  max-height: 360px;
-}
+
 
 #anhCarousel{
   max-height: 500px;
