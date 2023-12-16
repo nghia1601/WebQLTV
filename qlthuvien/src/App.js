@@ -3,6 +3,7 @@ import './App.css';
 
 import Home from './views/Home';
 import Login from './views/Login';
+import Signup from './views/Signup';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,6 +15,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 
+
 function App() {
   return (
     
@@ -21,7 +23,8 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/loginuser" element={<Login/>} />
+          <Route exact path="/createuser" element={<Signup/>} />
         </Routes>
       </div>
     </Router>
