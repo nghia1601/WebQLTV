@@ -11,15 +11,6 @@ router.post('/bookData', (req, res) => {
     }
 });
 
-// router.post('/bookData', (req,res)=>{
-//     try {
-        
-//         res.send(global.book, global.category)
-//     } catch (error) {
-//         console.error(error.message);
-//         res.send("Server Error")
-        
-//     }
-// })
+
 
 module.exports = router;
