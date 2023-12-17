@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoDB = require('./db')
 const app = express()
+const cors = require('cors')
 const port = 5000
 
 //tạo middleware
@@ -18,6 +19,9 @@ app.use((req, res, next) => {
 
  
 mongoDB();
+
+// Sử dụng middleware cors
+app.use(cors());
 
 app.use(express.json())
 

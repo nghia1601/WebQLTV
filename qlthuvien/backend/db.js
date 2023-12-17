@@ -7,15 +7,26 @@ const mongoURI = 'mongodb://nghia1601:nghia1601@ac-scjys5n-shard-00-00.emlgel6.m
 
 const mongoDB = async () => {
     try {
-        await mongoose.connect(mongoURI, { useNewUrlParser: true });
+        await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
         console.log("Connected to MongoDB");
-        const fetched_data = await mongoose.connection.db.collection("book");
-        const data = await fetched_data.find({}).toArray();
-        global.book = data;
-        console.log(global.book)
+
+        // Load book data
+        const bookCollection = mongoose.connection.db.collection("book");
+        const bookData = await bookCollection.find({}).toArray();
+
+        // Load category data
+        const categoryCollection = mongoose.connection.db.collection("category");
+        const catData = await categoryCollection.find({}).toArray();
+
+        global.book = bookData;
+        global.category = catData;
+
+        console.log("Data loaded successfully");
     } catch (error) {
-        console.error("---", error);  
+        console.error("---", error);
     }
 };
+
 
 module.exports = mongoDB;
