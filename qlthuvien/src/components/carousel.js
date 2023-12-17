@@ -15,7 +15,7 @@ export default function carousel() {
 
                     <div className="carousel-inner" id="anhCarousel">
                         <div className="carousel-item active">
-                            <img src="https://source.unsplash.com/random/900x700/?chicken" className="d-block w-100" style={{ filter:"brightness(30%)"}} alt="..." />
+                            <img src="https://th.bing.com/th/id/R.20b9ae028ac1a7f4902387337d49bf60?rik=2h1j06C865hA6Q&pid=ImgRaw&r=0" className="d-block w-100" style={{ filter:"brightness(30%)"}} alt="..." />
                         </div>
                         <div className="carousel-item">     
                             <img src="https://source.unsplash.com/random/900x700/?novel" className="d-block w-100" style={{ filter:"brightness(30%)"}} alt="..." />
