@@ -27,6 +27,8 @@ export default function Login() {
   
       if (json.success) {
         alert("Đăng Nhập Thành Công");
+        localStorage.setItem("authToken",json.authToken);
+        console.log(localStorage.getItem("authToken"))
         navigate("/")
         
       } else {

@@ -1,12 +1,15 @@
 import React from 'react'
 
 export default function Card(props) {
+    const handleAddToCart = () =>{
+
+    }
     return (
         <div>
             <div>
-                <div className="card mt-3" style={{ "width": "18rem", "maxHeight": "500px" }}>
+                <div className="card mt-3" style={{ "width": "18rem", "maxHeight": "700px" }}>
 
-                    <img src="https://cf.shopee.vn/file/0709dc1278f56bae15597fad741d8f20" className="card-img-top" alt="..." />
+                    <img src={props.imgSrc} className="card-img-top" alt="..." style={{ height:"300px", objectFit:"fill"}} />
 
 
                     <div className="card-body">
@@ -28,11 +31,16 @@ export default function Card(props) {
                                 <option value="full">Full</option>
                                 
                             </select> */}
-                            <button type="submit" className="m-3 btn btn-success">Mượn Sách</button>
+                            {/* <button type="submit" className="m-3 btn btn-success">Mượn Sách</button> */}
 
 
                         </div>
                         
+                    </div>
+                    <hr >
+                    </hr>
+                    <div className="d-flex justify-content-center">
+                    <button className={`btn btn-success justify-center ms-2`} style={{marginTop: '-15px'}} onclick={handleAddToCart}>Thêm Vào Giỏ</button>
                     </div>
                 </div>
             </div>
