@@ -13,7 +13,7 @@ export default function Home() {
 
   const loadData = async () => {
     try {
-      let response = await fetch("https://web-qltv-api.vercel.app//api/bookData", {
+      let response = await fetch("http://localhost:5000/api/bookData", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
