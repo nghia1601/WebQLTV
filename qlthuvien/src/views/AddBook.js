@@ -23,7 +23,7 @@ const AddBook = () => {
 
     try {
       // Gửi dữ liệu đến máy chủ
-      const response = await fetch('http://localhost:5000/api/addBook', {
+      const response = await fetch('https://web-qltv-api.vercel.app/api/addBook', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
