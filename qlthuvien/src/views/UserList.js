@@ -6,7 +6,7 @@ const AdminPage = () => {
   const [userList, setUserList] = useState([]);
   const loadData = async () => {
     try {
-      let response = await fetch("https://localhost:5000/api/bookData", {
+      let response = await fetch("http://localhost:5000/api/bookData", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
