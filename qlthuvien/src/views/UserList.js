@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
-
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const AdminPage = () => {
   
   const [userList, setUserList] = useState([]);
@@ -36,6 +37,8 @@ const AdminPage = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="container">
       <h1 className="mt-4">User List</h1>
       <ol className="breadcrumb mb-4">
@@ -86,6 +89,8 @@ const AdminPage = () => {
           </table>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

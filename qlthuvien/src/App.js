@@ -15,6 +15,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import { CartProvider } from './components/ContextReducer.js';
 import AdminPage from './views/AdminPage.js';
 import UserList from './views/UserList.js';
+import AddBook from './views/AddBook.js';
 
 
 
@@ -35,7 +36,7 @@ function App() {
             <Route exact path="/createuser" element={<Signup />} />
             <Route exact path="/admin" element={<AdminPage />} />
             <Route exact path="/userList" element= {<UserList/>} />
-            
+            <Route exact path="/addBook" element= {<AddBook/>} />
 
             
           </Routes>

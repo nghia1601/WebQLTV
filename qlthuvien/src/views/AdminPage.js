@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const AdminPage = () => {
   
@@ -36,6 +38,9 @@ const AdminPage = () => {
   };
 
   return (
+    <div>
+    <Navbar/>
+    
     <div className="container">
       <h1 className="mt-4">Book List</h1>
       <ol className="breadcrumb mb-4">
@@ -47,7 +52,7 @@ const AdminPage = () => {
         <div className="card-header">
           <i className="fas fa-table me-1"></i>
           Danh Sách Sản Phẩm
-          <Link to="/addbook" className="btn btn-primary">Thêm Book</Link>
+          <Link to="/addBook" className="btn btn-primary">Thêm Book</Link>
         </div>
         <div className="card-body">
           <table className="table table-bordered">
@@ -91,6 +96,8 @@ const AdminPage = () => {
           </table>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

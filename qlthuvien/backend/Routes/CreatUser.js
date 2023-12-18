@@ -4,6 +4,7 @@ const User = require('../models/User')
 const { body, validationResult } = require('express-validator')
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
+const { insertBook, mongoDB } = require('../db')
 const jwtSecret = "NguyenTrongNghia08022003@"
 
 
@@ -77,5 +78,24 @@ router.post("/loginuser",[
             res.json({ success: false });
         }
     })
+
+    router.post('/addBook', async (req, res) => {
+        try {
+            const { name, CategoryName, img, description, price } = req.body;
+            const newBook = { name, CategoryName, img, description, price };
+    
+            // Chèn sách mới
+            await insertBook(newBook);
+    
+            // Tải lại dữ liệu sau khi thêm sách
+            await mongoDB();
+    
+            // Trả về danh sách sách đã cập nhật
+            res.json({ success: true, book: global.book });
+        } catch (error) {
+            console.error('Lỗi khi thêm sách:', error);
+            res.status(500).json({ success: false, error: 'Lỗi khi thêm sách' });
+        }
+    });
 
 module.exports = router;

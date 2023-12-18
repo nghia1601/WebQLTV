@@ -32,7 +32,18 @@ const mongoDB = async () => {
     } catch (error) {
         console.error("---", error);
     }
+
+    const insertBook = async (bookData) => {
+        try {
+            const bookCollection = mongoose.connection.db.collection("book");
+            await bookCollection.insertOne(bookData);
+            console.log("Sách đã được thêm thành công");
+        } catch (error) {
+            console.error("Lỗi khi thêm sách:", error);
+        }
+    };
 };
 
 
-module.exports = mongoDB;
+module.exports =  mongoDB ;
+
