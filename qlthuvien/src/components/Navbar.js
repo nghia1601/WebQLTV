@@ -34,17 +34,22 @@ export default function Navbar() {
                 <li className="nav-item">
                   <Link className="nav-link active fs-5" aria-current="page" to="/">My Orders</Link>
                 </li>
+                
                 : ""}
 
 
             </ul>
             {(!localStorage.getItem("authToken")) ?
               <div className='d-flex'>
+                
                 <Link className="btn bg-white text-success mx-1" to="/loginuser">Login</Link>
                 <Link className="btn bg-white text-success mx-1" to="/createuser">SignUp</Link>
               </div>
               :
               <div>
+                <div className='btn bg-white text-danger mx-2'>
+                <Link className="btn bg-white text-danger mx-2" to="/admin">Admin</Link>
+                </div>
                 <div className=' btn bg-white text-success mx-2' onClick={() => setCartView(true)}>
                   Giỏ Hàng {" "}
                   <Badge pill bg="danger"> {data.length} </Badge>
@@ -55,6 +60,9 @@ export default function Navbar() {
                 <div className='btn bg-white text-danger mx-2' onClick={handleLogout}>
                   Logout
                 </div>
+
+                
+                
               </div>
             }
 

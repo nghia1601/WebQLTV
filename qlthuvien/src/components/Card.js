@@ -6,6 +6,15 @@ let data = useCart()
     // const [qty, setQty] = useState(1);
     // const [size, setSize] = useState("")
     const handleAddToCart = async () =>{
+        // let book = []
+        // for (const item of data) {
+        //     if(item.id === props.bookItem._id) {
+        //         book = item;
+        //         break;
+        //     }
+        // }
+        
+
         await dispatch({type:"ADD", id:props.bookItem._id, name:props.bookItem.name, price:props.bookItem.price, img:props.bookItem.img})
         console.log(data)
     }

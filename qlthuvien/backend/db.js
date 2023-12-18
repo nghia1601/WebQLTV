@@ -19,10 +19,16 @@ const mongoDB = async () => {
         const categoryCollection = mongoose.connection.db.collection("category");
         const catData = await categoryCollection.find({}).toArray();
 
+        // Load  user
+        // const userCollection = mongoose.connection.db.collection("users");
+        // const userData = await userCollection.find({}).toArray();
+
         global.book = bookData;
         global.category = catData;
+        // global.user = userData;
 
-        console.log("Data loaded successfully");
+
+        console.log("Data Load Seccess");
     } catch (error) {
         console.error("---", error);
     }
