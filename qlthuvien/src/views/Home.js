@@ -19,7 +19,7 @@ export default function Home() {
           'Content-Type': 'application/json'
         }
       });
-  
+   
       response = await response.json();
       console.log(response);
   
