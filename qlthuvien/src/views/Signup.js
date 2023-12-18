@@ -32,7 +32,7 @@ export default function Signup() {
       e.preventDefault();
       
       try {
-        const response = await fetch("https://localhost:5000/api/creatuser", {
+        const response = await fetch("https://web-qltv-trnghia.vercel.app/api/creatuser", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
