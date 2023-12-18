@@ -43,7 +43,7 @@ export default function Cart() {
                 
                 
                 <td >
-                  <button type='button' className='btn p-0' onClick={() => dispatch({ type: 'REMOVE', index: index })}>
+                  <button type='button' className='btn p-0 bg-danger' onClick={() => dispatch({ type: 'REMOVE', index: index })}>
                     {/* Use an image here if you want */}
                     Delete
                   </button> 

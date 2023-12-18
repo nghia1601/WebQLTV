@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
 const AdminPage = () => {
   
-  const [bookItem, setBookItem] = useState([]);
-
+  const [userList, setUserList] = useState([]);
   const loadData = async () => {
     try {
       let response = await fetch("http://localhost:5000/api/bookData", {
@@ -13,18 +12,19 @@ const AdminPage = () => {
           'Content-Type': 'application/json'
         }
       });
-
+  
       response = await response.json();
       console.log(response);
-
+  
       // Sử dụng trực tiếp dữ liệu từ response
-      setBookItem(response.book);
-      
+      setUserList(response.user)
+      // setBookItem(response.book);
+      // setBookCat(response.category);
     } catch (error) {
       console.error(error.message);
     }
   }
-
+  
   useEffect(() => {
     loadData();
   }, []);
@@ -37,50 +37,45 @@ const AdminPage = () => {
 
   return (
     <div className="container">
-      <h1 className="mt-4">Book List</h1>
+      <h1 className="mt-4">User List</h1>
       <ol className="breadcrumb mb-4">
         <li className="breadcrumb-item"><Link to="/">Home Page</Link></li>
-        <li className="breadcrumb-item active"><Link to="/userList">User List</Link></li>
+        <li className="breadcrumb-item active"><Link to="/admin">Book List</Link></li>
       </ol>
 
       <div className="card mb-4">
         <div className="card-header">
           <i className="fas fa-table me-1"></i>
-          Danh Sách Sản Phẩm
-          <Link to="/addbook" className="btn btn-primary">Thêm Book</Link>
+          Danh Sách Account
+          <Link to="/adduser" className="btn btn-primary">Thêm Account</Link>
         </div>
         <div className="card-body">
           <table className="table table-bordered">
             <thead>
               <tr className='bg-success'>
-                <th scope='col'>STT</th>
-                <th scope='col'>Tên Sách</th>
-                <th scope='col'>Thể Loại</th>
-                <th scope='col'>Hình Ảnh</th>
-                <th scope='col'>Mô Tả</th>
-                <th scope='col'>Ngày Thuê</th>
-                <th scope='col'>Giá Thuê</th>
-                <th scope='col'>Option</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Option</th>
               </tr>
             </thead>
             <tbody>
-              {bookItem.map((book, index) => (
-                <tr key={book._id}>
+            {userList.map((user, index) => (
+                <tr key={user._id}>
                   <th scope='row'>{index + 1}</th>
-                  <td>{book.name}</td>
-                  <td>{book.CategoryName}</td>
+                  <td>{user.name}</td>
                   <td>
-                    <img src={book.img} alt={book.name} style={{ maxWidth: '50px', maxHeight: '50px' }} />
+                    {user.location}
                   </td>
-                  <td>{book.description}</td>
-                  <td></td>
-                  <td>{book.price} VNĐ</td>
+                  <td>{user.email}</td>
+                  <td>{user.password}</td>
                   <td>
                     {/* You can add delete/edit buttons or links here */}
-                    <button type='button' className='btn p-0 bg-danger ' onClick={() => handleDelete(book._id)}>
+                    <button type='button' className='btn p-0 bg-danger' onClick={() => handleDelete(user._id)}>
                       Delete
                     </button>
-                    
                     <button type='button' className='btn p-0 btn-primary'>
                       Edit
                     </button>

@@ -13,6 +13,8 @@ import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import { CartProvider } from './components/ContextReducer.js';
+import AdminPage from './views/AdminPage.js';
+import UserList from './views/UserList.js';
 
 
 
@@ -31,6 +33,10 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/loginuser" element={<Login />} />
             <Route exact path="/createuser" element={<Signup />} />
+            <Route exact path="/admin" element={<AdminPage />} />
+            <Route exact path="/userList" element= {<UserList/>} />
+            
+
             
           </Routes>
         </div>

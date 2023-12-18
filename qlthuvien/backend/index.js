@@ -1,10 +1,19 @@
 const express = require('express')
 const mongoDB = require('./db')
+const mongoose = require('mongoose')
 const app = express()
 const cors = require('cors')
 
 
 const port = 5000
+
+
+
+
+
+
+
+
 
 //tạo middleware
 //Middleware có thể thực hiện các nhiệm vụ như xử lý dữ liệu đầu vào

@@ -31,23 +31,6 @@ export default function Home() {
     }
   }
   
-
-  // const loadData = async () => {
-    
-  //     let response = await fetch("http://localhost:5000/api/bookData", {
-  //       method: "POST",
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     });
-
-  //     response = await response.json();
-  //     console.log(response)
-  //     setBookItem(response[0]);
-  //     setBookCat(response[1]);
-    
-  // }
-
   useEffect(() => {
     loadData();
   }, []);
